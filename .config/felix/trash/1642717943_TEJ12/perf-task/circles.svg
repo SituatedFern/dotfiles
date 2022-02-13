@@ -1,0 +1,44 @@
+<svg width="800" height="800" style="background-color:gray">
+    
+
+        <path id="joe" d="
+        M 400, 400
+        m -75, 0
+        a 75,75 0 1,0 150,0
+        a 75,75 0 1,0 -150,0" 
+        fill="none" stroke="#000" stroke-width="5"/>
+
+    <path id="mama" d="
+        M 400, 400
+        m -150, 0
+        a 150,150 0 1,0 300,0
+        a 150,150 0 1,0 -300,0" 
+        fill="none" stroke="#000" stroke-width="5"/>
+
+    <path id="cringe" d="
+        M 400, 400
+        m -300, 0
+        a 300,300 0 1,0 600,0
+        a 300,300 0 1,0 -600,0" 
+        fill="none" stroke="#000" stroke-width="5"/> 
+
+    <ellipse cx="0" cy="0" rx="15" ry="15" fill="#000" stroke="none" stroke-width="5px">
+        <animateMotion dur="7s" repeatCount="indefinite">
+            <mpath href="#joe"/>
+        </animateMotion>
+    </ellipse>
+    
+    <ellipse cx="0" cy="0" rx="15" ry="15" fill="#2d08ff" stroke="none" stroke-width="5px">
+        <animateMotion dur="4s" repeatCount="indefinite">
+            <mpath href="#mama"/>
+        </animateMotion>
+    </ellipse>
+
+    <ellipse cx="0" cy="0" rx="15" ry="15" fill="#ffe605" stroke="none" stroke-width="5px">
+        <animateMotion dur="2.5s" repeatCount="indefinite">
+            <mpath href="#cringe"/>
+        </animateMotion>
+    </ellipse>
+
+
+</svg>

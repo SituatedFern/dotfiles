@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Setting the language of the document to english -->
+<head>
+  <title>Aristotle</title>
+  <link rel="shortcut icon" type="image/jpg" href="favicon.png"/> <!-- setting the favicon -->
+	<link rel="stylesheet" type="text/css" href="style.css" /> <!-- linking to css file -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.29/skrollr.min.js"></script> <!-- Script to check scrolling position -->
+  <!-- Initializing scroll script -->
+  <script>
+    $(document).ready(function() {
+      var s = skrollr.init();
+    })
+  </script>
+  <!-- Importing Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- The aristotlebust image is scaled when the user scrolls to give a zoom effect -->
+
+  <img src="aristotlebust.png" alt="Aristotle's Face" class="imgbust" data-0="transform: scale(1,1); opacity: 100%;" data-500="transform: scale(2,2); position: fixed; top:0; opacity: 100%;" data-700="transform: scale(3,3); position: fixed; top:0; opacity: 100%;" data-1000="position: absolute; top: 0px; opacity: 0%;">
+
+  <!-- The header fades earlier than the background so that the animation looks smoother -->
+
+  <img src="AristotleHeader.png" alt="Title" class="center" data-0="opacity:100%;" data-500="opacity:50%;" data-700="opacity:0%;" data-1200="opacity:0%;">
+
+  <!-- Below is only fully visible when the user has scrolled more than 1500 pixels (disappears at the same point when scrolling up)-->
+
+  <h1 class="shadow" data-0="opacity:0%;" data-500="opacity:0%;" data-900="opacity:25%;" data-1500="opacity:100%;" style="font-family: Poppins; font-size: 48px; color: #48C5F7;"><i>Aristotle</i></h1> <!-- Shadow for 3d effect on title -->
+
+  <h1 data-0="opacity:0%;" data-500="opacity:0%;" data-900="opacity:25%;" data-1500="opacity:100%;" style="font-family: Poppins; font-size: 48px; color: #FF4949;"><i>Aristotle</i></h1> <!-- Main title -->
+
+  <h2 class="firsth2" data-0="opacity:0%;" data-500="opacity:0%;" data-900="opacity:25%;" data-1500="opacity:100%;" style="font-family: JetBrains Mono; color: #FF4949;">Early Life:</h2>
+
+  <p class="p1" data-0="opacity:0%;" data-500="opacity:0%;" data-900="opacity:25%;" data-1500="opacity:100%;" style="font-family: JetBrains Mono; color: #48C5F7;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque diam volutpat commodo sed egestas egestas. Sit amet commodo nulla facilisi. Ut porttitor leo a diam sollicitudin. Vitae et leo duis ut diam quam nulla. Purus gravida quis blandit turpis cursus in. Sapien pellentesque habitant morbi tristique senectus et netus et malesuada. Turpis cursus in hac habitasse platea. Sollicitudin nibh sit amet commodo nulla facilisi. Hendrerit dolor magna eget est. Sodales neque sodales ut etiam sit amet nisl purus in. Turpis egestas pretium aenean pharetra. Lobortis feugiat vivamus at augue eget arcu dictum. Sagittis eu volutpat odio facilisis mauris sit amet massa vitae.</p>
+
+  <h2 class="secondh2" data-0="opacity:0%;" data-500="opacity:0%;" data-900="opacity:25%;" data-1500="opacity:100%;" style="font-family: JetBrains Mono; color: #FF4949;">The Poetics:</h2>
+
+  <p class="p2" data-0="opacity:0%;" data-500="opacity:0%;" data-900="opacity:25%;" data-1500="opacity:100%;" style="font-family: JetBrains Mono; color: #48C5F7;">The ancient greeks were legendary for their ideas on philosophy and politics. Stocism and Skeptisism were created by the greeks as ways of interperating the world around them. Although these ideas were formed a long time ago, they are still relevant and applicable to our lives today. Many of the <a class="reddragon" href="https://en.wikipedia.org/wiki/List_of_ancient_Greek_philosophers">famous philosophers of ancient greece</a> also analyzed and commented on the work of other people. This includes artistic pieces and even other philosophers' beliefs. Aristotle was a prominent figure in this field of study. He often commented on plays that were being shown at the time. In fact, Aristotle had a huge role in defining what a tragedy actually is. Aristotle went on to write a book about comedies and tragedies as well, called <i><a class="greendragon" href="https://en.wikipedia.org/wiki/Poetics_(Aristotle)">The Poetics</a></i>.</p>
+
+  <!-- Below is a button that links to the second page of the website (also fades in and out with scroll and changes colour on hover) -->
+
+  <a data-0="opacity:0%;" data-500="opacity:0%;" data-900="opacity:25%;" data-1500="opacity:100%;" href="table.html" class="btn" style="font-family: JetBrains Mono; color: black;">--></a>
+
+</body>
+</html>

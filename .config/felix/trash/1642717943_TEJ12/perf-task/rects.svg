@@ -1,0 +1,12 @@
+<svg width="600" height="750" style="background-color:black">
+    <rect x="100" y="100" width="400" height="150">
+        <animate attributeName="fill" values="#ffd000; #ff0000; #002fff; #ffd000" dur="4s" repeatCount="indefinite"/>
+    </rect>
+
+    <rect x="100" y="300" width="400" height="150">
+        <animate attributeName="fill" values="#ff0000; #002fff; #ffd000; #ff0000" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="100" y="500" width="400" height="150">
+        <animate attributeName="fill" values="#002fff; #ffd000; #ff0000; #002fff" dur="4s" repeatCount="indefinite"/>
+    </rect>
+</svg>

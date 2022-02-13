@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Setting the language of the document to english -->
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" /> <!-- Linking to css file -->
+    <title>Famous Philosophers</title> <!-- Setting the page title -->
+    <link rel="shortcut icon" type="image/jpg" href="favicon.png"/> <!-- setting the favicon -->
+    <!-- Importing fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Creating a 3d effect by dublicating the title font, changing the colour, and shifting the position by a few pixels -->
+    <h1 class="shadow" data-0="opacity:0%;" data-500="opacity:0%;" data-900="opacity:25%;" data-1500="opacity:100%;" style="font-family: Poppins; font-size: 48px; color: #48C5F7;"><i>Aristotle</i></h1> <!-- Shadow for 3d effect on title -->
+    <h1 data-0="opacity:0%;" data-500="opacity:0%;" data-900="opacity:25%;" data-1500="opacity:100%;" style="font-family: Poppins; font-size: 48px; color: #FF4949;"><i>Aristotle</i></h1> <!-- Main title -->
+    <h3 class="textcenter">Other Famous Philosophers:</h3>
+
+    <!-- Below is a button that links to the first page of the website (also changes colour on hover) -->
+    <a href="index.html" class="backbtn" style="font-family: JetBrains Mono; color: black;">&lt;--</a>
+    <div class="fp">
+        <table id="philosophers"> <!-- Giving the table an id so that it can be manipulated with css -->
+            <tr style="font-family: Poppins;"> <!-- Titles will be in a larger and more distinct font -->
+              <th>Name</th>
+              <th>Life</th>
+              <th>School of Thought</th>
+            </tr>
+            <tr style="font-family: JetBrains Mono;">
+              <td>Socrates</td>
+              <td>469-399 B.C.E.</td>
+              <td>Socratic</td>
+            </tr>
+            <tr style="font-family: JetBrains Mono;">
+              <td>Diogenes of Sinope</td>
+              <td>Unknown</td>
+              <td>Cynic</td>
+            </tr>
+            <tr style="font-family: JetBrains Mono;">
+              <td>Plato</td>
+              <td>428-347 B.C.E.</td>
+              <td>Academic</td>
+            </tr>
+            <tr style="font-family: JetBrains Mono;">
+              <td>Pythagoras</td>
+              <td>570-490 B.C.E.</td>
+              <td>Pythagorean</td>
+            </tr>
+            <tr style="font-family: JetBrains Mono;">
+              <td>Euclid of Megara</td>
+              <td>Unknown</td>
+              <td>Megarian</td>
+            </tr>
+          </table>
+    </div>
+</body>
+</html>
