@@ -102,4 +102,6 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 alias config='/usr/bin/git --git-dir=/home/ashwin/dotfiles/ --work-tree=/home/ashwin'
-alias config='/usr/bin/git --git-dir=/home/ashwin/dotfiles/ --work-tree=/home/ashwin'
+
+bindkey -v
+export KEYTIMEOUT=1
