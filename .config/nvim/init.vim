@@ -2,11 +2,24 @@
 call plug#begin()
 	Plug 'preservim/nerdtree'
 	Plug 'ryanoasis/vim-devicons'
+
+	" Autocomplete
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'preservim/nerdcommenter'
-	Plug 'junegunn/rainbow_parentheses.vim'
+	Plug 'luochen1990/rainbow'
 	Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
-	Plug 'dracula/vim'
+	Plug 'dracula/vim', { 'as': 'dracula' }
+	
+	" Top Bar
+	Plug 'kyazdani42/nvim-web-devicons'
+	Plug 'romgrk/barbar.nvim'
+
+	" Telescope
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
+	Plug 'nvim-telescope/telescope-ui-select.nvim'
+	Plug 'nvim-lua/popup.nvim'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 colorscheme dracula
@@ -61,10 +74,48 @@ endfunction
 
 filetype plugin on
 
-" Bracket Pair Colourizer
+" Fuzzy finder
+noremap <silent>ff <cmd>Telescope find_files<cr>
 
-let g:rainbow#max_level = 16
+" Bracket Pair Colorizer
+let g:rainbow_active = 1
 
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+" BarBar Config
+" Move to previous/next
+nnoremap <silent>    <A-,> :BufferPrevious<CR>
+nnoremap <silent>    <A-.> :BufferNext<CR>
+" Re-order to previous/next
+nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
+nnoremap <silent>    <A->> :BufferMoveNext<CR>
+" Goto buffer in position...
+nnoremap <silent>    <A-1> :BufferGoto 1<CR>
+nnoremap <silent>    <A-2> :BufferGoto 2<CR>
+nnoremap <silent>    <A-3> :BufferGoto 3<CR>
+nnoremap <silent>    <A-4> :BufferGoto 4<CR>
+nnoremap <silent>    <A-5> :BufferGoto 5<CR>
+nnoremap <silent>    <A-6> :BufferGoto 6<CR>
+nnoremap <silent>    <A-7> :BufferGoto 7<CR>
+nnoremap <silent>    <A-8> :BufferGoto 8<CR>
+nnoremap <silent>    <A-9> :BufferLast<CR>
+" Pin/unpin buffer
+nnoremap <silent>    <A-p> :BufferPin<CR>
+" Close buffer
+nnoremap <silent>    <A-c> :BufferClose<CR>
+" Wipeout buffer
+"                          :BufferWipeout<CR>
+" Close commands
+"                          :BufferCloseAllButCurrent<CR>
+"                          :BufferCloseAllButPinned<CR>
+"                          :BufferCloseBuffersLeft<CR>
+"                          :BufferCloseBuffersRight<CR>
+" Magic buffer-picking mode
+nnoremap <silent> <C-s>    :BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
+nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR>
 
-autocmd FileType * RainbowParentheses
+" Other:
+" :BarbarEnable - enables barbar (enabled by default)
+" :BarbarDisable - very bad command, should never be used
