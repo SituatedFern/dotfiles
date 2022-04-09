@@ -37,7 +37,7 @@
 
 (defwidget info [label]
   (box :orientation "h"
-       :class "label-ram"
+       :class "icon"
        :space-evenly false
     (box :class "label" label)
     (box :class "kernel" kernel)))
@@ -52,7 +52,7 @@
 
 (defwidget metric [label value onchange]
   (box :orientation "h"
-       :class "metric label-ram"
+       :class "metric icon"
        :space-evenly false
     (box :class "label" label)
     (scale :min 0
