@@ -1,30 +1,28 @@
 (defwidget bar []
   (centerbox :orientation "h"
     (workspaces)
-    (music)
+    (bruh :label "")
     (sidestuff)
     ))
 
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
-    (metric :label "墳"
-            :value volume
-            :onchange "amixer -D pulse sset Master {}%")
-    (metric :label ""
-            :value {EWW_RAM.used_mem_perc}
-            :onchange "")
-    (metric :label ""
-            :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
-            :onchange "")
     (info :label "")
-    time))
+    (cpu :label "")
+    (mem :label "")
+    (hdd :label "")
+    (upt :label "")
+    (updates :label "")
+    (clock :label "")
+    ))
 
 (defwidget workspaces []
   (box :class "workspaces"
        :orientation "h"
        :space-evenly true
        :halign "start"
-       :spacing 10
+       :spacing 5
+    (bruh :label "")
     (button :onclick "wmctrl -s 0" 1)
     (button :onclick "wmctrl -s 1" 2)
     (button :onclick "wmctrl -s 2" 3)
@@ -35,12 +33,65 @@
     (button :onclick "wmctrl -s 7" 8)
     (button :onclick "wmctrl -s 8" 9)))
 
+(defwidget bruh [label]
+  (box :orientation "h"
+       :class "icon placeholder"
+       :space-evenly false
+    (box :class "label placeholder" label)))
+
 (defwidget info [label]
   (box :orientation "h"
-       :class "icon"
+       :class "icon penguin"
        :space-evenly false
     (box :class "label" label)
     (box :class "kernel" kernel)))
+
+(defwidget cpu [label]
+  (box :orientation "h"
+       :class "icon cpu"
+       :space-evenly false
+    (box :class "label" label)
+    (box :class "kernel" "cpu: ${round(EWW_CPU.avg, 0)}%")
+    ))
+
+(defwidget mem [label]
+  (box :orientation "h"
+       :class "icon mem"
+       :space-evenly false
+    (box :class "label" label)
+    (box :class "kernel" "mem: ${round((EWW_RAM.used_mem) * 0.001, 0)}M (${round(EWW_RAM.used_mem_perc, 0)}%)")
+    ))
+
+(defwidget upt [label]
+  (box :orientation "h"
+       :class "icon upt"
+       :space-evenly false
+    (box :class "label" label)
+    (box :class "kernel" "uptime: ${uptime}")
+    ))
+
+(defwidget updates [label]
+  (box :orientation "h"
+       :class "icon updates"
+       :space-evenly false
+    (box :class "label" label)
+    (box :class "kernel" "${updates} updates")
+    ))
+
+(defwidget hdd [label]
+  (box :orientation "h"
+       :class "icon hdd"
+       :space-evenly false
+    (box :class "label" label)
+    (box :class "kernel" "hdd: ${round(EWW_DISK["/"].free * 0.000000001, 0)}G free")
+    ))
+
+(defwidget clock [label]
+  (box :orientation "h"
+       :class "icon penguin"
+       :space-evenly false
+    (box :class "label" label)
+    (box :class "kernel" time)))
 
 (defwidget music []
   (box :class "music"
@@ -61,8 +112,6 @@
            :value value
            :onchange onchange)))
 
-
-
 (deflisten music :initial ""
   "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
 
@@ -70,17 +119,23 @@
   "scripts/getvol")
 
 (defpoll time :interval "10s"
-  "date '+%H:%M %b %d, %Y'")
+  "date '+%b %d %Y - (%H:%M)'")
+
+(defpoll uptime :interval "5m"
+  `uptime --pretty | sed -e 's/up //g' -e 's/ days/d/g' -e 's/ day/d/g' -e 's/ hours/h/g' -e 's/ hour/h/g' -e 's/ minutes/m/g' -e 's/, / /g'`)
 
 (defpoll kernel :interval "30m"
   `uname -r`)
+
+(defpoll updates :interval "10m"
+  `checkupdates | wc -l`)
 
 (defwindow bar
   :monitor 0
   :windowtype "dock"
   :geometry (geometry :x "0%"
-                      :y "0%"
-                      :width "100%"
+                      :y "1%"
+                      :width "99%"
                       :height "10px"
                       :anchor "top center")
   :reserve (struts :side "top" :distance "4%")

@@ -46,11 +46,12 @@ current = false
 
 [[repos.themes]]
 name = "Dracula Rounded"
+directory = "/home/ashwin/.config/leftwm/themes/Dracula Rounded"
 repository = "https://github.com/AethanFoot/leftwm-theme-dracula-rounded/"
 commit = "*"
 version = "0.0.2"
 leftwm_versions = "^0.2.7, <0.3.0"
-current = false
+current = true
 
 [[repos.themes]]
 name = "Forest"
@@ -198,4 +199,4 @@ name = "ashg"
 directory = "/home/ashwin/.config/leftwm/themes/ashg"
 version = "0.0.0"
 leftwm_versions = "*"
-current = true
+current = false

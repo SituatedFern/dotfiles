@@ -23,18 +23,50 @@ $blue-gray: #546e7a;
   all: unset; //Unsets everything so you can style everything from scratch
 }
 
-//Global Styles
 .bar {
   background-color: #282a36;
   color: #f8f8f2;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-size: 11px;
+  border-radius: 25px;
 }
-
-// Styles on classes (see eww.yuck for more information)
 
 .sidestuff slider {
   all: unset;
   color: $pink;
+}
+
+.placeholder {
+  color: white;
+  font-size: 25px;
+  margin-left: 5px;
+}
+
+.penguin {
+  color: $light-blue;
+}
+
+.cpu {
+  color: $yellow;
+}
+
+.mem {
+  color: $red;
+}
+
+.hdd {
+  color: $indigo;
+}
+
+.upt {
+  color: $light-green;
+}
+
+.updates {
+  color: $purple;
 }
 
 .metric scale trough highlight {
