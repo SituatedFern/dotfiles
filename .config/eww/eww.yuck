@@ -23,15 +23,15 @@
        :halign "start"
        :spacing 5
     (bruh :label "")
-    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 0'" 1)
-    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 1'" 2)
-    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 2'" 3)
-    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 3'" 4)
-    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 4'" 5)
-    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 5'" 6)
-    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 6'" 7)
-    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 7'" 8)
-    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 8'" 9)))
+    (button :class {desktop == 0 ? "active" : "inactive"} :onclick "leftwm-command 'SendWorkspaceToTag 0 0'" 1)
+    (button :class {desktop == 1 ? "active" : "inactive"} :onclick "leftwm-command 'SendWorkspaceToTag 0 1'" 2)
+    (button :class {desktop == 2 ? "active" : "inactive"} :onclick "leftwm-command 'SendWorkspaceToTag 0 2'" 3)
+    (button :class {desktop == 3 ? "active" : "inactive"} :onclick "leftwm-command 'SendWorkspaceToTag 0 3'" 4)
+    (button :class {desktop == 4 ? "active" : "inactive"} :onclick "leftwm-command 'SendWorkspaceToTag 0 4'" 5)
+    (button :class {desktop == 5 ? "active" : "inactive"} :onclick "leftwm-command 'SendWorkspaceToTag 0 5'" 6)
+    (button :class {desktop == 6 ? "active" : "inactive"} :onclick "leftwm-command 'SendWorkspaceToTag 0 6'" 7)
+    (button :class {desktop == 7 ? "active" : "inactive"} :onclick "leftwm-command 'SendWorkspaceToTag 0 7'" 8)
+    (button :class {desktop == 8 ? "active" : "inactive"} :onclick "leftwm-command 'SendWorkspaceToTag 0 8'" 9)))
 
 (defwidget bruh [label]
   (box :orientation "h"
@@ -66,6 +66,9 @@
 
 (deflisten music :initial ""
   "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+
+(defpoll desktop :interval "100ms"
+  `xdotool get_desktop`)
 
 (defpoll volume :interval "1s"
   "scripts/getvol")
