@@ -7,13 +7,13 @@
 
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
-    (info :label "")
-    (cpu :label "")
-    (mem :label "")
-    (hdd :label "")
-    (upt :label "")
-    (updates :label "")
-    (clock :label "")
+    (info :label "" :class "icon penguin" :value kernel)
+    (info :label "" :class "icon cpu" :value "cpu: ${round(EWW_CPU.avg, 0)}%")
+    (info :label "" :class "icon mem" :value "mem: ${round((EWW_RAM.used_mem) * 0.001, 0)}M (${round(EWW_RAM.used_mem_perc, 0)}%)")
+    (info :label "" :class "icon hdd" :value "hdd: ${round(EWW_DISK["/"].free * 0.000000001, 0)}G free")
+    (info :label "" :class "icon upt" :value "uptime: ${uptime}")
+    (info :label "" :class "icon updates" :value "${updates} updates")
+    (info :label "" :class "icon penguin" :value time)
     ))
 
 (defwidget workspaces []
@@ -39,59 +39,12 @@
        :space-evenly false
     (box :class "label placeholder" label)))
 
-(defwidget info [label]
+(defwidget info [label class value]
   (box :orientation "h"
-       :class "icon penguin"
+       :class class
        :space-evenly false
     (box :class "label" label)
-    (box :class "kernel" kernel)))
-
-(defwidget cpu [label]
-  (box :orientation "h"
-       :class "icon cpu"
-       :space-evenly false
-    (box :class "label" label)
-    (box :class "kernel" "cpu: ${round(EWW_CPU.avg, 0)}%")
-    ))
-
-(defwidget mem [label]
-  (box :orientation "h"
-       :class "icon mem"
-       :space-evenly false
-    (box :class "label" label)
-    (box :class "kernel" "mem: ${round((EWW_RAM.used_mem) * 0.001, 0)}M (${round(EWW_RAM.used_mem_perc, 0)}%)")
-    ))
-
-(defwidget upt [label]
-  (box :orientation "h"
-       :class "icon upt"
-       :space-evenly false
-    (box :class "label" label)
-    (box :class "kernel" "uptime: ${uptime}")
-    ))
-
-(defwidget updates [label]
-  (box :orientation "h"
-       :class "icon updates"
-       :space-evenly false
-    (box :class "label" label)
-    (box :class "kernel" "${updates} updates")
-    ))
-
-(defwidget hdd [label]
-  (box :orientation "h"
-       :class "icon hdd"
-       :space-evenly false
-    (box :class "label" label)
-    (box :class "kernel" "hdd: ${round(EWW_DISK["/"].free * 0.000000001, 0)}G free")
-    ))
-
-(defwidget clock [label]
-  (box :orientation "h"
-       :class "icon penguin"
-       :space-evenly false
-    (box :class "label" label)
-    (box :class "kernel" time)))
+    (box :class "kernel" value)))
 
 (defwidget music []
   (box :class "music"
@@ -99,7 +52,6 @@
        :space-evenly false
        :halign "center"
     {music != "" ? "🎵${music}" : ""}))
-
 
 (defwidget metric [label value onchange]
   (box :orientation "h"
