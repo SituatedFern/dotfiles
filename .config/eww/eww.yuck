@@ -23,15 +23,15 @@
        :halign "start"
        :spacing 5
     (bruh :label "")
-    (button :onclick "wmctrl -s 0" 1)
-    (button :onclick "wmctrl -s 1" 2)
-    (button :onclick "wmctrl -s 2" 3)
-    (button :onclick "wmctrl -s 3" 4)
-    (button :onclick "wmctrl -s 4" 5)
-    (button :onclick "wmctrl -s 5" 6)
-    (button :onclick "wmctrl -s 6" 7)
-    (button :onclick "wmctrl -s 7" 8)
-    (button :onclick "wmctrl -s 8" 9)))
+    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 0'" 1)
+    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 1'" 2)
+    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 2'" 3)
+    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 3'" 4)
+    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 4'" 5)
+    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 5'" 6)
+    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 6'" 7)
+    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 7'" 8)
+    (button :onclick "leftwm-command 'SendWorkspaceToTag 0 8'" 9)))
 
 (defwidget bruh [label]
   (box :orientation "h"
