@@ -1,0 +1,164 @@
+html, body {
+  position: relative;
+  margin: 0;
+  background-color: black;
+  scroll-behavior: smooth; /* Adds smooth scrolling */
+  overflow-x: hidden; /* Hides the horizontal scroll bar when content overflows */
+}
+
+a {
+	color: yellow; /* Link colour will be yellow when not hovering */
+}
+
+a.greendragon:hover { /* Links that have this class will change colour to green when they are hovered over */
+	color: greenyellow;
+}
+
+a.reddragon:hover { /* Links that have this class will change colour to red when they are hovered over */
+  color: red;
+}
+
+.imgbust { /* Class for the main background image */
+  width: auto;
+  height: 100vh; /* Setting the initial height of the image */
+  min-height: 600px; /* Creates a minimum height in case of alternate display configurations */
+  display: block;
+  margin-left: 11%; /* The image is not fully centered so we need to move this a bit to the left */
+  position: absolute;
+}
+
+.center { /* Used to center content */
+  width: 50%;
+  height: auto;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+h1{ /* Formatting headers for the page */
+  position: fixed;
+  margin: 50px;
+}
+
+.shadow { /* Class to position the shadow for the title's 3d effect */
+  margin-left: 55px;
+  margin-top: 50px;
+}
+
+.firsth2{ /* Class for the position of the first subheading */
+  position: fixed;
+  margin: 50px;
+  top: 13%;
+}
+
+.p1{ /* Class for the position of the first paragraph */
+  position: fixed;
+  margin: 50px;
+  top: 20%;
+  color: #48C5F7;
+}
+
+.secondh2{ /* Class for the position of the second subheading */
+  position: fixed;
+  margin: 50px;
+  top: 50%;
+}
+
+.p2{ /* Class for the position of the second paragraph */
+  position: fixed;
+  margin: 50px;
+  top: 57%;
+  color: #48C5F7;
+}
+
+.btn { /* Class for the button */
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Courier New;
+  color: #000000;
+  font-size: 20px;
+  background: #FF4949;
+  padding: 7px 10px 7px 10px;
+  text-decoration: none;
+  position: fixed;
+  top: 53%;
+  right: 5%;
+}
+
+.btn:hover { /* Recolouring the button when it is hovered on */
+  background: #48C5F7;
+  text-decoration: none;
+}
+
+.backbtn { /* Same as the .btn class but positioned differently */
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Courier New;
+  color: #000000;
+  font-size: 20px;
+  background: #FF4949;
+  padding: 7px 10px 7px 10px;
+  text-decoration: none;
+  position: fixed;
+  top: 53%;
+  left: 3.7%;
+}
+
+.backbtn:hover { /* Hover for .backbtn */
+  background: #48C5F7;
+  text-decoration: none;
+}
+
+/* Ids for the table on the second page*/
+
+#philosophers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #48C5F7;
+}
+
+#philosophers td, #philosophers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#philosophers tr:nth-child(even){background-color: #48C5F7;}
+
+#philosophers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #FF4949;
+  color: white;
+}
+
+.fp { /* Positioning the table on the second page */
+  width: 50%;
+  height: auto;
+  display: block;
+  position: fixed;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.textcenter { /* Class to position text at the center of the screen */
+  display: block;
+  position: fixed;
+  margin: auto;
+  top: 28%;
+  left: 39%;
+  text-align: center;
+}
+
+.textcenter::first-line { /* Setting the font and colour for the first line of the class */
+  color: white;
+  font-family: JetBrains Mono;
+}
