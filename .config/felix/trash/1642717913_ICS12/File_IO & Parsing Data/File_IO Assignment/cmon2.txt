@@ -1,2 +1,0 @@
-Toyota, 20, Monday, 14, Tuesday, 15, Tuesday, 16
-B, 40, Wednesday, 14, Friday, 12
