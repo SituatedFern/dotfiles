@@ -1,0 +1,7 @@
+[class]
+reader_default = [
+{ command = "zathura", fork = true, silent = true }
+]
+
+[extension]
+pdf.inherit = "reader_default"
