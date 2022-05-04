@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 alias config='/usr/bin/git --git-dir=/home/ashwin/dotfiles/ --work-tree=/home/ashwin'
 
 bindkey -v
