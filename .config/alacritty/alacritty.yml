@@ -859,7 +859,6 @@ font:
   bold:
     family: JetBrainsMono Nerd Font
     style: Bold
-
   italic:
     family: JetBrainsMono Nerd Font
     style: Italic
@@ -867,6 +866,23 @@ font:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
   size: 12.0
+
+    #font:
+    #normal:
+    #family: IBMPlexMono
+    #style: Regular
+    #bold:
+    #family: IBMPlexMono
+    #style: Bold
+    #italic:
+    #family: IBMPlexMono
+    #style: Italic
+    #bold_italic:
+    #family: IBMPlexMono
+    #style: Bold Italic
+    #size: 12.0
+
+
 
 #######################################
 ##      START OF COLOR SCHEMES       ##
@@ -920,7 +936,7 @@ schemes:
       focused_match:
         foreground: '#44475a'
         background: '#ffb86c'
-      bar:
+      colors.footer_bar:
         background: '#282a36'
         foreground: '#f8f8f2'
     line_indicator:
