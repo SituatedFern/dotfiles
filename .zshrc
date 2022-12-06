@@ -104,5 +104,7 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 alias config='/usr/bin/git --git-dir=/home/ashwin/dotfiles/ --work-tree=/home/ashwin'
 
+export PATH="$HOME/.emacs.d/bin:$PATH"
+
 bindkey -v
 export KEYTIMEOUT=1
