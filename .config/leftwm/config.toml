@@ -11,6 +11,12 @@ focus_new_windows = true
 
 [[keybind]]
 command = "Execute"
+value = "emacsclient -c -a 'emacs'"
+modifier = ["modkey"]
+key = "a"
+
+[[keybind]]
+command = "Execute"
 value = "dmenu_run"
 modifier = ["modkey"]
 key = "p"
