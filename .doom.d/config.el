@@ -81,3 +81,5 @@
 ;; rust-analyzer will be the default even if rls is installed as well
 (after! rustic
   (setq rustic-lsp-server 'rust-analyzer))
+
+(setq projectile-project-search-path '("~/Projects/"))
