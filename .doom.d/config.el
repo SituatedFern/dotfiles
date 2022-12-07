@@ -77,3 +77,7 @@
 ;; they are implemented.
 
 (beacon-mode 1)
+
+;; rust-analyzer will be the default even if rls is installed as well
+(after! rustic
+  (setq rustic-lsp-server 'rust-analyzer))
