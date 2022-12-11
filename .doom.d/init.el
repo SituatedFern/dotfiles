@@ -107,6 +107,7 @@
        ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
        lsp               ; language server support
+       (debugger +lsp)
 
        :os
        (:if IS-MAC macos)  ; improve compatibility with macOS
