@@ -106,12 +106,12 @@
 ;; Hints :)
 (setq lsp-rust-analyzer-server-display-inlay-hints t)
 (setq lsp-rust-analyzer-inlay-hints-mode t)
-;;(setq lsp-rust-analyzer-display-lifetime-elision-hints-enable "skip_trivial")
+(setq lsp-rust-analyzer-display-lifetime-elision-hints-enable "skip_trivial")
 (setq lsp-rust-analyzer-display-chaining-hints t)
-;;(setq lsp-rust-analyzer-display-lifetime-elision-hints-use-parameter-names nil)
+(setq lsp-rust-analyzer-display-lifetime-elision-hints-use-parameter-names nil)
 (setq lsp-rust-analyzer-display-closure-return-type-hints t)
-;;(setq lsp-rust-analyzer-display-parameter-hints nil)
-;;(setq lsp-rust-analyzer-display-reborrow-hints nil)
+(setq lsp-rust-analyzer-display-parameter-hints nil)
+(setq lsp-rust-analyzer-display-reborrow-hints nil)
 
 ;; lsp-ui
 (setq lsp-ui-doc-enable t)
@@ -122,4 +122,3 @@
 ;;(setq lsp-ui-peek-always-show t)
 ;;(setq lsp-ui-sideline-enable nil)
 ;;(setq lsp-ui-sideline-show-hover t)
-;;(setq lsp-ui-doc-enable nil)
